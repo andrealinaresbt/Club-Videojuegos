@@ -1,5 +1,5 @@
-import styles from "./Footer.module.css"
 import React from 'react'
+import styles from "./Footer.module.css"
 
 export  function Footer() {
   return (
@@ -10,7 +10,7 @@ export  function Footer() {
           <p className={styles.descripcion}>unimeet@unimet.edu.ve</p>
       </div>
       <div>
-          <img className={styles.imgFooter}  src="./src/assets/logoFooter.png" alt="Logo Unimmet" />
+          {/*<img className={styles.imgFooter}  src="./src/assets/logoFooter.png" alt="Logo Unimmet" />*/}
           <p className={styles.copyright}>Copyright © 2024 - Universidad Metropolitana</p>
           <p className={styles.copyright}>Todos los derechos reservados.</p>
       </div>
