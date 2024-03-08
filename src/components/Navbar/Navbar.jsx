@@ -1,5 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
-import  styles from "./Navbar.module.css"
+/* eslint-disable no-unused-vars */
+import { Link } from "react-router-dom";
+import styles from "./Navbar.module.css";
 
 export function Navbar(){
 
