@@ -1,6 +1,6 @@
 
 header {
-    background-color: white;
+    background-color: rgb(27, 73, 101);
     margin-top: 1.5%;
     display: flex;
     justify-content: space-between;
@@ -8,6 +8,11 @@ header {
     padding: 0 10px;
     height: 50px;
 
+}
+
+.title{
+    font-family: Roboto;
+    color: rgb(255, 255, 255);
 }
 
 .navbar .navList{
@@ -22,6 +27,6 @@ header {
     font-family: Roboto;
     font-size: 700;
     text-decoration: none;
-    color: rgba(54, 72, 92, 1);
+    color: rgb(255, 255, 255);
     
 }

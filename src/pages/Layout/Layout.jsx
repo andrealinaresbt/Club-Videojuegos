@@ -9,6 +9,7 @@ export default function Layout() {
         <Navbar/>
         <section className="body">
             <Outlet />
+            body
         </section>
         <footer>
           <Footer />
