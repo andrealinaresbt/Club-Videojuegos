@@ -4,7 +4,7 @@ import  SignInPage from './pages/SignInPage/SignInPage';
 import UserPage from './pages/UserPage/UserPage';
 import  ClubDetails  from './pages/ClubDetails/ClubDetails';
 import  SearchPage  from './pages/SearchPage/SearchPage';
-import SignUpPage from "./pages/SignUpPage/LoginPage";
+import SignUpPage from "./pages/SignUpPage/SignUpPage";
 
 export const router = createBrowserRouter([
   {
