@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage  from './pages/HomePage/HomePage';
-import  LoginPage  from './pages/LogInPage/LoginPage';
 import  SignInPage from './pages/SignInPage/SignInPage';
 import UserPage from './pages/UserPage/UserPage';
 import  ClubDetails  from './pages/ClubDetails/ClubDetails';
 import  SearchPage  from './pages/SearchPage/SearchPage';
+import SignUpPage from "./pages/SignUpPage/LoginPage";
 
 export const router = createBrowserRouter([
   {
@@ -16,11 +16,11 @@ export const router = createBrowserRouter([
     element: <ClubDetails />,
   },
   {
-    path: '/login',
-    element: <LoginPage />,
+    path: '/register',
+    element: <SignUpPage />,
   },
   {
-    path: '/signIn',
+    path: '/login',
     element: <SignInPage />,
   },
   {
