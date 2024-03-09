@@ -55,7 +55,7 @@ export default function SignInPage() {
         {/*ANCHOR - LINK*/}
         <Link to={REGISTER_URL} className={styles.SignUpPageRedirect}>
           ¿No estás registrado?{' '}
-          <span className={styles.redirectLink}>Inicia sesión</span>
+          <span className={styles.redirectLink}>Crear usuario</span>
         </Link>
 
       </form>
