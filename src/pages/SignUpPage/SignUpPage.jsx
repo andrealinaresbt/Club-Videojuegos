@@ -1,11 +1,15 @@
 //import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './SignUpPage.module.css'
-const LOGIN_URL="";
+import { Selector } from '../../components/Selector'
+import {Navbar} from '../../components/Navbar/Navbar';
+import { LOGIN_URL, REGISTER_URL } from '../../constants/urls';
 
 export default function SignUpPage() {
   return (
-      //NOTE - Parte de arriba de la ventana de log in
+    <>
+    <Navbar/>
+      {/*//NOTE - Parte de arriba de la ventana de log in*/}
     <div className={styles.container}>
       <form className={styles.form}>
         <h1 className={styles.title}>Crea una nueva cuenta</h1>
@@ -23,19 +27,6 @@ export default function SignUpPage() {
           name='firstName'
           id='firstName'
           placeholder='Ex. Gabriel Brito'
-          />
-        </div>
-
-        {/*SECTION - FAVORITE VIDEO GAME*/}
-        <div className={styles.inputContainer}>
-        <label htmlFor='first_name'>
-            <span>Selecciona tu juego favorito</span>
-          </label>
-          <input
-          type='text'
-          name='lastName'
-          id='lastName'
-          placeholder='Ex. Brito'
           />
         </div>
 
@@ -78,6 +69,9 @@ export default function SignUpPage() {
           />
         </div>
 
+         {/**/} 
+        {/*SECTION - FAVORITE VIDEO GAME*/}
+      
         {/*ANCHOR - BUTTONS*/}
 
         <button type= "submit" className={styles.submitBtn}>
@@ -88,13 +82,15 @@ export default function SignUpPage() {
         </button>
 
         {/*ANCHOR - LINK*/}
-        <Link to={LOGIN_URL} className='{styles.loginRedirect}'>
+        <Link to={LOGIN_URL} className={styles.loginRedirect}>
           ¿Ya estás registrado?{' '}
-          <span className='{styles.redirectLink}'>Inicia sesión</span>
+          <span className={styles.redirectLink}>Inicia sesión</span>
         </Link>
 
       </form>
     </div>
-  )
+    </>
+  );
+  
   
 }
