@@ -1,5 +1,125 @@
+
+import { LOGIN_URL } from "../../constants/urls";
+import { registerWithEmailAndPassword, signInWithGoogle } from "../../firebase/auth-service";
+import styles from './SignUpPage.module.css';
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
 export default function SignUpPage() {
+  const [formData, setFormData]= useState({
+    name: "",
+    email: "",
+    password: "", 
+   });
+
+  const handleSignWithGoogle =async()=>{
+    await signInWithGoogle();
+    
+  }
+
+  const handleOnChange = (event )=> {
+    const{name, value} = event.target;
+    setFormData({
+      ...formData,
+      [name]:value,
+    });
+  };
+
+    const onSubmit = async(event)=> {
+      event.preventDefault();
+      console.log(formData);
+      registerWithEmailAndPassword(formData.email, formData.password);
+
+    };
+
   return (
-    <div>SignUpPage</div>
-  )
+    <div className={styles.container}>
+      
+      <form className={styles.form}>
+        <h1 className={styles.title}>Crea una nueva cuenta</h1>
+        <p className={styles.welcomeMes}>
+          ¡Bienvenido! Por favor ingresa tus datos para crear una cuenta.
+        </p>
+
+        {/*SECTION - NAMES*/}
+        <div className={styles.inputContainer}>
+        <label htmlFor='first_name'>
+            <span>Ingresa tu nombre</span>
+          </label>
+          <input
+          type='text'
+          name='firstName'
+          id='firstName'
+          placeholder='Ex. Gabriel Brito'
+          onChange ={handleOnChange}
+          />
+        </div>
+
+        {/*SECTION - USERNAME*/}
+        <div className={styles.inputContainer}>
+          <label htmlFor='username'>
+            <span>Ingresa tu usuario</span>
+          </label>
+          <input
+          type='text'
+          name='username'
+          id='username'
+          placeholder='Ex. andrealinaresb'
+          onChange ={handleOnChange}
+          />
+        </div>
+
+        {/*SECTION - EMAIL*/}
+        <div className={styles.inputContainer}>
+        <label htmlFor='email'>
+            <span>Ingresa tu email</span>
+          </label>
+          <input
+          type='email'
+          name='email'
+          id='email'
+          placeholder='Ex. jolly@gmail.com'
+          onChange ={handleOnChange}
+          />
+        </div>
+
+        {/*SECTION - PASSWORD*/}
+        <div className={styles.inputContainer}>
+        <label htmlFor='email'>
+            <span>Ingresa tu contraseña</span>
+          </label>
+          <input
+          type='password'
+          name='password'
+          id='password'
+          placeholder='*************'
+          onChange ={handleOnChange}
+          />
+        </div>
+
+         {/**/} 
+        {/*SECTION - FAVORITE VIDEO GAME*/}
+      
+        {/*ANCHOR - BUTTONS*/}
+
+        <button type= "submit" className={styles.submitBtn} onClick={onSubmit}>
+          Siguiente
+        </button>
+        <button type= "button" className={styles.googleBtn} onClick={handleSignWithGoogle}>
+          Registrarme con Google
+        </button>
+
+        {/*ANCHOR - LINK*/}
+        <Link to={LOGIN_URL} className={styles.loginRedirect}>
+          ¿Ya estás registrado?{' '}
+          <span className={styles.redirectLink}>Inicia sesión</span>
+        </Link>
+
+      </form>
+          
+    </div>
+    
+  );
+  
+  
 }
