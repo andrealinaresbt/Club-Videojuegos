@@ -10,6 +10,7 @@ import SignInPage from './pages/SignInPage/SignInPage';
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import UserPage from './pages/UserPage/UserPage';
 import { LOGIN_URL , HOME_URL, CLUB_URL, REGISTER_URL, USER_URL,SEARCH_URL} from "./constants/urls";
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 
 
 
@@ -22,7 +23,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Route path= {HOME_URL} element = {<HomePage/>} />
   <Route path= {LOGIN_URL} element = {<SignInPage/>} />
   <Route path= {REGISTER_URL} element = {<SignUpPage/>} />
-  <Route path= {USER_URL} element = {<UserPage/>} />
+  <Route path= {USER_URL} element = {
+  <PrivateRoute>
+    <UserPage/>
+    </PrivateRoute>}
+     />
   <Route path= {SEARCH_URL} element = {<SearchPage/>} />
   <Route path= {CLUB_URL} element = {<ClubDetails/>} />
   </Route>

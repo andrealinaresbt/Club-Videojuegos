@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import { LOGIN_URL, REGISTER_URL, SEARCH_URL, USER_URL } from "../../constants/urls";
+import { HOME_URL, LOGIN_URL, REGISTER_URL, SEARCH_URL, USER_URL } from "../../constants/urls";
 import { logout } from "../../firebase/auth-service";
 import { useUser } from "../../contexts/UserContext";
 
@@ -20,6 +20,9 @@ export function Navbar(){
                 <ul className={styles.navList}>
                 <li>
                     <Link className={styles.Link} to={SEARCH_URL}><span>Buscador</span></Link>
+                    </li>      
+                    <li>
+                    <Link className={styles.Link} to={HOME_URL}><span>Página Principal</span></Link>
                     </li>      
                     {user&& (
                         <>

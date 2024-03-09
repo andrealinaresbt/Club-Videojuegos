@@ -1,16 +1,38 @@
+import { useState } from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
-import { REGISTER_URL } from "../../constants/urls";
+import { HOME_URL, REGISTER_URL } from "../../constants/urls";
+import { loginWithEmailAndPassword } from "../../firebase/auth-service";
 import styles from './SignInPage.module.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignInPage() {
+  const navigate = useNavigate();
+  const [formData, setFormData]= useState({
+    email: '',
+    password: '',
+  });
+
+  const handleOnChange =(event) =>{
+    const{name,value}= event.target; 
+    setFormData({
+      ...formData,
+      [name]:value,
+    });
+  };
+
+  const onSubmit = async(event) =>{
+    event.preventDefault();
+    const{email, password} = formData;
+    await loginWithEmailAndPassword(email,password);
+    navigate(HOME_URL);
+  }
   return (
     <div>
 
        {/* //NOTE - Parte de arriba de la ventana de log in*/}
     <div className={styles.container}>
         
-      <form className={styles.form}>
+      <form className={styles.form } onSubmit={onSubmit}>
         <h1 className={styles.title}>Inicio de sesión</h1>
         <p className={styles.welcomeMes}>
           ¡Bienvenido! Por favor ingresa tus datos para inicio de sesión.
@@ -27,6 +49,7 @@ export default function SignInPage() {
           name='email'
           id='email'
           placeholder='Ex. jolly@gmail.com'
+          onChange ={handleOnChange}
           />
         </div>
 
@@ -40,12 +63,13 @@ export default function SignInPage() {
           name='password'
           id='password'
           placeholder='*************'
+          onChange ={handleOnChange}
           />
         </div>
 
         {/*ANCHOR - BUTTONS*/}
 
-        <button type= "submit" className={styles.submitBtn}>
+        <button type= "submit" className={styles.submitBtn} onClick={onSubmit}>
           Siguiente
         </button>
         <button type= "button" className={styles.googleBtn}>

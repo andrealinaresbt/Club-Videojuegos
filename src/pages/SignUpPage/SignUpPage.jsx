@@ -1,11 +1,12 @@
 
-import { LOGIN_URL } from "../../constants/urls";
+import { HOME_URL, LOGIN_URL, USER_URL } from "../../constants/urls";
 import { registerWithEmailAndPassword, signInWithGoogle } from "../../firebase/auth-service";
 import styles from './SignUpPage.module.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function SignUpPage() {
+  const navigate = useNavigate();
   const [formData, setFormData]= useState({
     name: "",
     email: "",
@@ -27,8 +28,10 @@ export default function SignUpPage() {
 
     const onSubmit = async(event)=> {
       event.preventDefault();
-      console.log(formData);
-      registerWithEmailAndPassword(formData.email, formData.password);
+      const{email, password,...extraData} = formData;
+      registerWithEmailAndPassword(email, password, extraData);
+      navigate(HOME_URL);
+      
 
     };
 
@@ -48,8 +51,8 @@ export default function SignUpPage() {
           </label>
           <input
           type='text'
-          name='firstName'
-          id='firstName'
+          name='name'
+          id='name'
           placeholder='Ex. Gabriel Brito'
           onChange ={handleOnChange}
           />
