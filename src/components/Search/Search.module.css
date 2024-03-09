@@ -6,6 +6,7 @@
     border-radius: 25px;
     margin-top: 4%;
     margin-inline: 250px;
+    margin-bottom: 7%;
 
 }
 
@@ -34,3 +35,21 @@
   outline: none;
 }
 
+@media (max-width: 1600px) {
+    .search{
+        margin-inline: 150px;
+    }
+}
+
+@media (max-width: 900px) {
+    .search{
+        margin-inline: 50px;
+    }
+}
+
+
+@media (max-width: 570px) {
+    .search{
+        margin-inline: 25px;
+    }
+}

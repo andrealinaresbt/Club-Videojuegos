@@ -7,7 +7,6 @@ export default function useGames(){
         const load= async ()=>{
             const games=await getGames();
             setGames(games)
-            console.log(games);
         };
         load();
     }, []);

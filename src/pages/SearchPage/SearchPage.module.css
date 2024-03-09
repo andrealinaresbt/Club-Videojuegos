@@ -18,3 +18,22 @@
     font-family: Roboto;
     color: rgb(255, 255, 255);
 }
+
+.msg{
+    font-family: Roboto;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+
+@media (max-width: 570px) {
+    .title{
+        font-size: 40px;
+    }
+
+    .msg{
+        font-size: 18px; 
+    }
+}
