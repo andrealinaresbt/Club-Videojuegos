@@ -1,0 +1,45 @@
+.card {
+    background-image: linear-gradient(to right, #bcf1fc, #8eecff);
+    border-radius: 18px;
+    margin: 2%;
+    padding: 10px;
+    text-align: left;
+    padding-left: 25px;
+    color: rgb(27, 73, 101);
+    border-color:rgb(27, 73, 101);
+    border-width: medium;
+    border-style: solid;
+    font-family: Roboto;
+  }
+
+.title{
+    font-size: 30px;
+}
+
+
+.button {
+    background-color: #baf2fd;
+    border-radius: 18px;
+    border: medium solid rgb(27, 73, 101);
+    color: rgb(27, 73, 101);
+    font-family: Roboto;
+    font-weight: bolder;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: rgb(217, 240, 240);
+    border-color: rgb(39, 115, 129);
+  }
+
+  .button:active {
+    background-color: rgb(177, 220, 220);
+    border-color: rgb(27, 73, 101);
+  }
+
+  .button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(39, 115, 129, 0.5);
+  }
