@@ -9,7 +9,6 @@
     border-color:rgb(27, 73, 101);
     border-width: medium;
     border-style: solid;
-    font-family: Roboto;
   }
 
 .title{
@@ -22,7 +21,7 @@
     border-radius: 18px;
     border: medium solid rgb(27, 73, 101);
     color: rgb(27, 73, 101);
-    font-family: Roboto;
+    
     font-weight: bolder;
     font-size: 1rem;
     padding: 0.5rem 1rem;

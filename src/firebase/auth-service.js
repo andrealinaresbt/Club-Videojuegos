@@ -20,6 +20,7 @@ export const signInWithGoogle = async () =>{
                 name: result.user.displayName,
                /*TODO: add videoGame: parameter""*/
                 username: "",
+                videoGame: 0,
             });
             
         }

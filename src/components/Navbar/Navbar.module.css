@@ -1,31 +1,46 @@
-
 header {
-    background-color: rgb(27, 73, 101);
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between; /* Adjust this based on your desired layout */
     align-items: center;
-    padding: 0 10px;
-    height: 50px;
-    margin-bottom: 0px;
-}
-
-.title{
-    font-family: Roboto;
-    color: rgb(255, 255, 255);
-}
-
-.navbar .navList{
+    background-color: #1B4965;
+  }
+.title {
+    font-size: 1.5rem;
+    color: white;
+  }
+  .navList {
+    display: flex;
     list-style: none;
-}
-.navList li{
-    display: inline-block;
-    padding:  20px;
-}
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navList li {
+    padding: 0 10px; 
+    color: white;
+    /* Add some horizontal spacing between the links */
+  }
 
-.Link {
-    font-family: Roboto;
-    font-size: 700;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    
+  @media (max-width: 800px) {
+    /* Styles for smaller screens */
+    .header {
+      height: 70px; 
+      color: white;
+    }
+  
+   
 }
+  
+  @media (max-width: 480px) {
+    /* Styles for even smaller screens */
+    .navList li {
+      padding: 0 5px; 
+      color: white;
+    }
+  }
+
+  .Link {
+    font-size: 0,8rem; 
+    color: white;
+    font-weight: bold;
+  }

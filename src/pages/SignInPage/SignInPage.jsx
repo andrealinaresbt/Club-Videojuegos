@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Navbar } from "../../components/Navbar/Navbar";
 import { HOME_URL, REGISTER_URL } from "../../constants/urls";
 import { loginWithEmailAndPassword, signInWithGoogle } from "../../firebase/auth-service";
 import styles from './SignInPage.module.css';
 import { Link, useNavigate } from "react-router-dom";
 
 export default function SignInPage() {
+  
   const navigate = useNavigate();
   const [formData, setFormData]= useState({
     email: '',
@@ -72,6 +72,8 @@ export default function SignInPage() {
           onChange ={handleOnChange}
           />
         </div>
+
+         
 
         {/*ANCHOR - BUTTONS*/}
 

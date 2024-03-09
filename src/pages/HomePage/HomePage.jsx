@@ -8,7 +8,6 @@ export default function HomePage() {
   return (
     <main>
         
-        <Navbar/>
         <section className={styles.middlebox}>
             <Outlet />
               <h1 className={styles.title}>Game World</h1>

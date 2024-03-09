@@ -95,3 +95,17 @@
     color: #5fa8d3;
     text-decoration: underline;
   }
+  
+/* styles.module.css */
+.selectContainer {
+  width: 100%; 
+}
+
+
+.selectContainer select {
+  height: 40px; 
+  font-size: 16px; 
+  border-radius: 10px; 
+  padding: 8px; 
+  margin-top: 8px;
+}
