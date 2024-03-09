@@ -1,14 +1,39 @@
-import { Navbar } from "../../components/Navbar/Navbar";
+
 import { LOGIN_URL } from "../../constants/urls";
+import { registerWithEmailAndPassword, signInWithGoogle } from "../../firebase/auth-service";
 import styles from './SignUpPage.module.css';
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function SignUpPage() {
+  const [formData, setFormData]= useState({
+    name: "",
+    email: "",
+    password: "", 
+   });
+
+  const handleSignWithGoogle =async()=>{
+    await signInWithGoogle();
+  }
+
+  const handleOnChange = (event )=> {
+    const{name, value} = event.target;
+    setFormData({
+      ...formData,
+      [name]:value,
+    });
+  };
+
+    const onSubmit = async(event)=> {
+      event.preventDefault();
+      console.log(formData);
+      registerWithEmailAndPassword(formData.email, formData.password);
+
+    };
+
   return (
-    <>
-    <Navbar/>
-      {/*//NOTE - Parte de arriba de la ventana de log in*/}
     <div className={styles.container}>
+      
       <form className={styles.form}>
         <h1 className={styles.title}>Crea una nueva cuenta</h1>
         <p className={styles.welcomeMes}>
@@ -25,6 +50,7 @@ export default function SignUpPage() {
           name='firstName'
           id='firstName'
           placeholder='Ex. Gabriel Brito'
+          onChange ={handleOnChange}
           />
         </div>
 
@@ -38,6 +64,7 @@ export default function SignUpPage() {
           name='username'
           id='username'
           placeholder='Ex. andrealinaresb'
+          onChange ={handleOnChange}
           />
         </div>
 
@@ -51,6 +78,7 @@ export default function SignUpPage() {
           name='email'
           id='email'
           placeholder='Ex. jolly@gmail.com'
+          onChange ={handleOnChange}
           />
         </div>
 
@@ -64,6 +92,7 @@ export default function SignUpPage() {
           name='password'
           id='password'
           placeholder='*************'
+          onChange ={handleOnChange}
           />
         </div>
 
@@ -72,10 +101,10 @@ export default function SignUpPage() {
       
         {/*ANCHOR - BUTTONS*/}
 
-        <button type= "submit" className={styles.submitBtn}>
+        <button type= "submit" className={styles.submitBtn} onClick={onSubmit}>
           Siguiente
         </button>
-        <button type= "button" className={styles.googleBtn}>
+        <button type= "button" className={styles.googleBtn} onClick={handleSignWithGoogle}>
           Registrarme con Google
         </button>
 
@@ -86,8 +115,9 @@ export default function SignUpPage() {
         </Link>
 
       </form>
+          
     </div>
-    </>
+    
   );
   
   

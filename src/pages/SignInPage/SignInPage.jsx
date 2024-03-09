@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 export default function SignInPage() {
   return (
     <div>
+
        {/* //NOTE - Parte de arriba de la ventana de log in*/}
     <div className={styles.container}>
+        
       <form className={styles.form}>
         <h1 className={styles.title}>Inicio de sesión</h1>
         <p className={styles.welcomeMes}>
@@ -47,7 +49,7 @@ export default function SignInPage() {
           Siguiente
         </button>
         <button type= "button" className={styles.googleBtn}>
-          Registrarme con Google
+          Iniciar sesion con Google
         </button>
 
         {/*ANCHOR - LINK*/}
