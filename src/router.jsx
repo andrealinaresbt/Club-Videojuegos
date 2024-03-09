@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import HomePage  from './pages/HomePage/HomePage';
-import  SignInPage from './pages/SignInPage/SignInPage';
-import UserPage from './pages/UserPage/UserPage';
-import  ClubDetails  from './pages/ClubDetails/ClubDetails';
-import  SearchPage  from './pages/SearchPage/SearchPage';
+import ClubDetails from './pages/ClubDetails/ClubDetails';
+import HomePage from './pages/HomePage/HomePage';
+import Layout from './pages/Layout/Layout';
+import SearchPage from './pages/SearchPage/SearchPage';
+import SignInPage from './pages/SignInPage/SignInPage';
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
+import UserPage from './pages/UserPage/UserPage';
 
 export const router = createBrowserRouter([
   {
@@ -30,5 +31,9 @@ export const router = createBrowserRouter([
   {
     path: '/search',
     element: <SearchPage />,
+  },
+  {
+    path: '/layout',
+    element: <Layout />,
   }
 ]);

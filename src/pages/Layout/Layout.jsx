@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
 import { Navbar } from "../../components/Navbar/Navbar";
 
-export default function HomePage() {
+export default function Layout() {
   return (
     <main>
         
@@ -19,4 +19,3 @@ export default function HomePage() {
     </main>
   )
 }
-

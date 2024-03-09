@@ -1,9 +1,7 @@
-//import React from 'react'
-import { Link } from 'react-router-dom'
-import styles from './SignUpPage.module.css'
-import { Selector } from '../../components/Selector'
-import {Navbar} from '../../components/Navbar/Navbar';
-import { LOGIN_URL, REGISTER_URL } from '../../constants/urls';
+import { Navbar } from "../../components/Navbar/Navbar";
+import { LOGIN_URL } from "../../constants/urls";
+import styles from './SignUpPage.module.css';
+import { Link } from "react-router-dom";
 
 export default function SignUpPage() {
   return (

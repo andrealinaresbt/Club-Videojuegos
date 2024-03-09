@@ -1,7 +1,8 @@
+import { Navbar } from "../../components/Navbar/Navbar";
+import { REGISTER_URL } from "../../constants/urls";
 import styles from './SignInPage.module.css';
-import { Link } from 'react-router-dom';
-import { REGISTER_URL } from '../../constants/urls';
-import SignUpPage from '../SignUpPage/SignUpPage';
+import { Link } from "react-router-dom";
+
 export default function SignInPage() {
   return (
     <div>
