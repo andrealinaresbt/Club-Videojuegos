@@ -14,6 +14,7 @@ export default function SignUpPage() {
 
   const handleSignWithGoogle =async()=>{
     await signInWithGoogle();
+    
   }
 
   const handleOnChange = (event )=> {
