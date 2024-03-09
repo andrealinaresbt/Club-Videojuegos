@@ -6,30 +6,37 @@ import SearchPage from './pages/SearchPage/SearchPage';
 import SignInPage from './pages/SignInPage/SignInPage';
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import UserPage from './pages/UserPage/UserPage';
+import { LOGIN_URL } from "./constants/urls";
+import { HOME_URL } from "./constants/urls";
+import { CLUB_URL } from "./constants/urls";
+import { REGISTER_URL } from "./constants/urls";
+import { USER_URL } from "./constants/urls";
+import { SEARCH_URL} from "./constants/urls";
+
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: HOME_URL,
     element: <HomePage />,
   },
   {
-    path: '/clubes',
+    path: CLUB_URL,
     element: <ClubDetails />,
   },
   {
-    path: '/register',
+    path: REGISTER_URL,
     element: <SignUpPage />,
   },
   {
-    path: '/login',
+    path: LOGIN_URL,
     element: <SignInPage />,
   },
   {
-    path: '/user/profile',
+    path: USER_URL,
     element: <UserPage />,
   },
   {
-    path: '/search',
+    path: SEARCH_URL,
     element: <SearchPage />,
   },
   {
