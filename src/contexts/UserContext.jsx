@@ -20,7 +20,7 @@ export function UserContextProvider({children}){
             }else{
                 setUser(null);
             }
-            setIsLoading(true);
+            setIsLoading(false);
         });
   
 

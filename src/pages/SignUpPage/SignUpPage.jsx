@@ -11,10 +11,12 @@ export default function SignUpPage() {
     name: "",
     email: "",
     password: "", 
+    videoGame: "",
    });
 
   const handleSignWithGoogle =async()=>{
     await signInWithGoogle();
+    navigate(HOME_URL);
     
   }
 

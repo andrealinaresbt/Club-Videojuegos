@@ -1,5 +1,11 @@
-import { signInWithPopup, signOut, createUserWithEmailAndPassword , signInWithEmailAndPassword} from "firebase/auth";
-import { auth, googleProvider } from "./config";
+import {
+    signInWithPopup,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    getAdditionalUserInfo,
+  } from "firebase/auth";
+  import { auth, googleProvider } from "./config";
 import { createUserProfile } from "./users-service";
 
 {/*ANCHOR - TODOS LOS METODOS PARA AUTENTICAR*/}
@@ -7,8 +13,17 @@ import { createUserProfile } from "./users-service";
 export const signInWithGoogle = async () =>{
     try {
         const result = await signInWithPopup(auth, googleProvider);
-        console.log(result);
-        console.log("hi");
+        const {isNewUser} = getAdditionalUserInfo(result);
+        if (isNewUser) {
+            await createUserProfile(result.user.uid,{
+                email: result.user.email,
+                name: result.user.displayName,
+               /*TODO: add videoGame: parameter""*/
+                username: "",
+            });
+            
+        }
+        console.log("SIGN IN WITH GOOGLE",result);
     } catch (error) {
         console.error(error);
     }

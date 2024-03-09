@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { HOME_URL, REGISTER_URL } from "../../constants/urls";
-import { loginWithEmailAndPassword } from "../../firebase/auth-service";
+import { loginWithEmailAndPassword, signInWithGoogle } from "../../firebase/auth-service";
 import styles from './SignInPage.module.css';
 import { Link, useNavigate } from "react-router-dom";
 
@@ -19,6 +19,12 @@ export default function SignInPage() {
       [name]:value,
     });
   };
+
+  const handleSignWithGoogle =async()=>{
+    await signInWithGoogle();
+    navigate(HOME_URL);
+    
+  }
 
   const onSubmit = async(event) =>{
     event.preventDefault();
@@ -72,7 +78,7 @@ export default function SignInPage() {
         <button type= "submit" className={styles.submitBtn} onClick={onSubmit}>
           Siguiente
         </button>
-        <button type= "button" className={styles.googleBtn}>
+        <button type= "button" className={styles.googleBtn} onClick={handleSignWithGoogle}>
           Iniciar sesion con Google
         </button>
 
