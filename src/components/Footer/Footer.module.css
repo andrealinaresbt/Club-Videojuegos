@@ -12,7 +12,7 @@
     width: 570px;
 }
 .direccion {
-    font-family: Roboto;
+    
     font-size: 22px;
     font-style: normal;
     font-weight: 900;
@@ -20,7 +20,7 @@
 }
 
 .descripcion {
-    font-family: Roboto;
+    
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -29,7 +29,6 @@
 
 .copyright{
 text-align: center;
-font-family: Roboto;
 font-size: 14px;
 font-style: normal;
 font-weight: 300;
