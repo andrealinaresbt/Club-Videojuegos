@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import { LOGIN_URL, SEARCH_URL, USER_URL } from "../../constants/urls";
+import { LOGIN_URL, REGISTER_URL, SEARCH_URL, USER_URL } from "../../constants/urls";
 import { logout } from "../../firebase/auth-service";
-import { useUserContext } from "../../contexts/UserContext";
+import { useUser } from "../../contexts/UserContext";
 
 export function Navbar(){
-    const { user, isLoadingUser } = useUserContext();
-    
+    const {user} = useUser();
+    console.log(user);
     const handleLogout = async() =>{
         console.log("saliendo")
         await logout();
@@ -18,19 +18,31 @@ export function Navbar(){
             </div>
             <nav className={styles.navbar}>
                 <ul className={styles.navList}>
+                <li>
+                    <Link className={styles.Link} to={SEARCH_URL}><span>Buscador</span></Link>
+                    </li>      
+                    {user&& (
+                        <>
+                        <li>
+                        <Link className={styles.Link} to={USER_URL}><span>Bienvenido, {user.name}</span></Link>
+                    </li>
+                    <li>
+                        <button type= "button" onClick={handleLogout}>Cerrar sesión</button>
+                    </li>
                     
+                        </>)}
+                         
+
+                    {!user && (
+                        <>
                     <li>
-                        <Link className={styles.Link} to={USER_URL}><span>Perfil personal</span></Link>
+                    <Link className={styles.Link} to={LOGIN_URL}><span>Iniciar sesión</span></Link>
                     </li>
                     <li>
-                    <Link className={styles.Link} to={SEARCH_URL}><span>Buscador</span></Link>
-                    </li>       
-                    <li>
-                    <Link className={styles.Link} to={LOGIN_URL}><span>Log</span></Link>
-                    </li>
-                    <li>
-                    <Link className={styles.Link} to={SEARCH_URL}><span>Buscador</span></Link>
+                    <Link className={styles.Link} to={REGISTER_URL}><span>Registrate</span></Link>
                     </li>  
+                        </>
+)}
 
                     
                 </ul>

@@ -11,7 +11,7 @@ export default function Layout() {
         <Navbar/>
         <section className="body">
             <Outlet />
-            body
+            
         </section>
         <footer>
           <Footer />
@@ -20,5 +20,5 @@ export default function Layout() {
       </UserContextProvider>
 
     </main>
-  )
+  );
 }
