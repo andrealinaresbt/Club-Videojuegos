@@ -1,7 +1,5 @@
 import { Outlet } from "react-router-dom";
 import { Card } from "../../components/Card/Card";
-import { Footer } from "../../components/Footer/Footer";
-import { Navbar } from "../../components/Navbar/Navbar";
 import styles from "./HomePage.module.css";
 
 export default function HomePage() {
@@ -21,11 +19,7 @@ export default function HomePage() {
           <Card name="Club de Cazadores de Zombis" description="Únete a otros supervivientes en la lucha contra hordas de no muertos en juegos como Left 4 Dead o Resident Evil." games="Red Dead Redemption 2, Among Us, Apex Legends"/>
 
         </section>
-        <footer>
-          <Footer />
-        </footer>
         
-
     </main>
   )
 }
