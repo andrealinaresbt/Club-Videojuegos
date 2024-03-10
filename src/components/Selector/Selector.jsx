@@ -11,7 +11,7 @@ export const Selector = ({ label, options, changeValue }) => {
         className=""
       >
         <option value={-1}>Seleccionar</option>
-        {options.map((option, index) => (
+        {options && Array.isArray(options) && options.map((option, index) => (
           <option key={index} value={option.ID}>
             {option.titulo}
           </option>
