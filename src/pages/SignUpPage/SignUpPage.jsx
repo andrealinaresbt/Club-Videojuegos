@@ -18,6 +18,7 @@ export default function SignUpPage() {
     email: "",
     password: "",
     videoGame: 0,
+    membresias: [],
   });
   const handleSignWithGoogle = async () => {
     await signInWithGoogle();

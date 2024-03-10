@@ -18,9 +18,9 @@ export const signInWithGoogle = async () =>{
             await createUserProfile(result.user.uid,{
                 email: result.user.email,
                 name: result.user.displayName,
-               /*TODO: add videoGame: parameter""*/
                 username: "",
                 videoGame: 0,
+                membresias: [],
             });
             
         }
