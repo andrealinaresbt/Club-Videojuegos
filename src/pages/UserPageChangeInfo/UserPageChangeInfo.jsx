@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import styles from './UserPageChangeInfo.module.css';
-import { Selector } from "../../../Selector/Selector";
+import { Selector } from "../../components/Selector/Selector";
 import useGames from "../../controllers/hooks/games";
 import { useUser } from "../../contexts/UserContext";
-import { useEffect, useState } from "react";
-import { getUserData } from "../../controllers/readDB";
-import { doc, getDoc, onSnapshot, updateDoc } from "firebase/firestore";
+import { useState } from "react";
+import { doc, getDoc,  updateDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
-import { HOME_URL, USER_URL } from "../../constants/urls";
+import { USER_URL } from "../../constants/urls";
 
 export default function UserPageChangeInfo() {
   
