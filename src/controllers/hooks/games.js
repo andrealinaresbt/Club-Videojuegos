@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getGames } from "../../../controllers/readDB";
+import { getGames } from "../readDB";
 export default function useGames(){
     const [games, setGames]= useState(null);
 

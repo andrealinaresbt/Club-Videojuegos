@@ -3,7 +3,7 @@
 import { Outlet } from "react-router-dom";
 import { Search } from "../../components/Search/Search";
 import styles from "./SearchPage.module.css";
-import useGames from "./hooks/games";
+import useGames from "../../controllers/hooks/games";
 import { GameCard } from "../../components/GameCard/GameCard";
 import React, { useState } from "react";
 

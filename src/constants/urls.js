@@ -4,4 +4,4 @@ export const LOGIN_URL = '/login';
 export const USER_URL ='/user';
 export const SEARCH_URL ='/search'
 export const CLUB_URL ='/clubes';
-export const ADD_INFO = '/login/addedInfo';
+export const EDIT_INFO = '/user/edit';

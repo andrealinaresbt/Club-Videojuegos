@@ -14,6 +14,8 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import SignInPage from "./pages/SignInPage/SignInPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import UserPage from "./pages/UserPage/UserPage";
+import UserPageChangeInfo from "./pages/UserPage/UserPageChangeInfo/UserPageChangeInfo";
+
 import {
   LOGIN_URL,
   HOME_URL,
@@ -21,7 +23,7 @@ import {
   REGISTER_URL,
   USER_URL,
   SEARCH_URL,
-  ADD_INFO,
+  EDIT_INFO,
 } from "./constants/urls";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 
@@ -38,9 +40,21 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             element={
               <PrivateRoute>
                 <UserPage />
+                
+
               </PrivateRoute>
             }
           />
+           <Route
+            path={EDIT_INFO}
+            element={
+              <PrivateRoute>
+                <UserPageChangeInfo />
+                
+
+              </PrivateRoute>
+            }
+            />
           <Route path={SEARCH_URL} element={<SearchPage />} />
           <Route path={CLUB_URL} element={<ClubDetails />} />
         </Route>

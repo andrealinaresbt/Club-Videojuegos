@@ -1,6 +1,6 @@
 header {
     display: flex;
-    justify-content:space-between; /* Adjust this based on your desired layout */
+    justify-content:space-between; 
     align-items: center;
     background-color: #1B4965;
   }
