@@ -1,16 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "../../contexts/UserContext";
 import styles from "./UserPage.module.css";
+import { EDIT_INFO } from "../../constants/urls";
+
 
 export default function UserPage() {
+  
   const { user } = useUser();
-  console.log(user);
-  const username = {
-    name: "John Doe",
-    email: "johndoe@example.com",
-    age: 25,
+  const changeInfo = async () => {
+    
+    navigate(EDIT_INFO);
   };
-
+  
+  const navigate = useNavigate();
+ 
   return (
     <div className={styles.userCard}>
       <div className={styles.textCardInfo}>
@@ -22,7 +25,7 @@ export default function UserPage() {
           <p>Juego favorito: {user.membresias}</p>
         </div>
         <div>
-      <button type="submit" className={styles.submitBtn} >
+      <button type="submit" className={styles.submitBtn} onClick={changeInfo} >
           Editar
         </button>
       </div>
