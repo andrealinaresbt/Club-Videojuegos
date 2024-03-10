@@ -5,9 +5,15 @@ import useClubs from "../../controllers/hooks/clubs";
 
 export default function HomePage() {
   const clubs=useClubs();
+
+
+  // Verifica si clubs es null o undefined antes de acceder a sus propiedades
+  if (!clubs) {
+    return <p>Cargando...</p>; // Puedes mostrar un mensaje de carga mientras se obtienen los datos
+  }
+  
   return (
-    <main>
-        
+    <main>  
         <section className={styles.middlebox}>
             <Outlet />
               <h1 className={styles.title}>Game World</h1>
@@ -19,7 +25,6 @@ export default function HomePage() {
           <Card name={clubs[2].nombre} description={clubs[2].descripcion} games={clubs[2].videojuegos}/>
           <Card name={clubs[3].nombre} description={clubs[3].descripcion} games={clubs[3].videojuegos}/>
           <Card name={clubs[4].nombre} description={clubs[4].descripcion} games={clubs[4].videojuegos}/>
-
         </section>
         
     </main>

@@ -7,7 +7,11 @@ export  function Card(props) {
         <h1 className={styles.title}>{props.name}</h1>
         <h4>{props.description}</h4>
         <h5>Juegos: {props.games}</h5>
-        <button className={styles.button}>Más información</button>
+        <div className={styles.buttons}>
+          <button className={styles.button}>Más información</button>
+          <button className={styles.button}>Unirse</button>
+        </div>
+        
     </div>
   )
 }

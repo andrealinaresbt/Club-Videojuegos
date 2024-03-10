@@ -26,6 +26,7 @@
     font-size: 1rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    margin-right: 20px;
   }
 
   .button:hover {
@@ -44,3 +45,7 @@
   }
 
 
+.buttons{
+  display: flex;
+  flex-direction: row;
+}
