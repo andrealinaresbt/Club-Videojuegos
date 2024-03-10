@@ -7,7 +7,6 @@ export default function useClubs(){
         const load= async ()=>{
             const clubs=await getClubs();
             setClubs(clubs)
-            console.log(clubs);
         };
         load();
     }, []);
