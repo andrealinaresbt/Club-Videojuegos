@@ -74,20 +74,6 @@
     cursor: pointer;
   }
   
-  .container .form .googleBtn {
-    background: #ffffff;
-    border: 1px solid #d0d5dd;
-    color: #344054;
-  }
-  
-  .container .form .loginRedirect {
-    text-align: center;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: #5fa8d3;
-  }
   
   .container .form .loginRedirect .redirectLink {
     font-weight: 600;
@@ -189,6 +175,11 @@
   .profilePic img {
     width: 150px;
     height: 150px;
+  }
+  .container .form .inputContainer input {
+    display: block;
+    min-height: 20px;
+    
   }
 }
 

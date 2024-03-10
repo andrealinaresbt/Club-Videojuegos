@@ -24,7 +24,7 @@ export const signInWithGoogle = async () =>{
             });
             
         }
-        console.log("SIGN IN WITH GOOGLE",result);
+        console.log("SIGN IN WITH GOOGLE", result);
     } catch (error) {
         console.error(error);
     }

@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useUser } from "../../contexts/UserContext";
-import { LOGIN_URL } from "../../constants/urls";
+import { HOME_URL, LOGIN_URL, USER_URL } from "../../constants/urls";
 
 export function PrivateRoute({ children }) {
   const { user, isLoadingUser } = useUser();
@@ -10,8 +10,11 @@ export function PrivateRoute({ children }) {
   }
 
   if (!isLoadingUser && !user) {
-    return <Navigate to={LOGIN_URL} />;
+    console.log(user);
+    return <Navigate to={HOME_URL} />;
+    
   }
+  
 
   return children;
 }

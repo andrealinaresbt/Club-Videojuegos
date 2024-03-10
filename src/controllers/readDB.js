@@ -14,3 +14,12 @@ export async function getGames(){
     const games= gameDocs.docs.map((doc) => doc.data());
     return games;
 }
+export async function getUserData(userId) {
+    const usersCollection = collection(db, 'users');
+    const usersDocs = await getDocs(usersCollection);
+    const users = usersDocs.docs.map((doc) => doc.data());
+    // Use find method to retrieve the user with the specified ID
+    const foundUser = users.find((user) => user.uid === userId);
+  
+    return foundUser;
+  }

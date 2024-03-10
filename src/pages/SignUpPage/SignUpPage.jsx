@@ -6,7 +6,7 @@ import {
 import styles from "./SignUpPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Selector } from "../../components/Selector/Selector";
+import { Selector } from "../../../Selector/Selector";
 import useGames from "../../controllers/hooks/games";
 
 export default function SignUpPage() {
