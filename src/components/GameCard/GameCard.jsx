@@ -7,7 +7,10 @@ export  function GameCard(props) {
         <h1 className={styles.title}>{props.title}</h1>
         <h4>Género: {props.genre}</h4>
         <h4>{props.description}</h4>
+        <div className={styles.buttonsDiv}>
         <button className={styles.button}>Más información</button>
+        
+        </div>
     </div>
   )
 }
