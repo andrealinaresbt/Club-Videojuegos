@@ -8,6 +8,7 @@ export async function getClubs(){
     return clubs;
 }
 
+
 export async function getGames(){
     const gamesCollection =collection(db, 'videojuegos');
     const gameDocs = await getDocs(gamesCollection);

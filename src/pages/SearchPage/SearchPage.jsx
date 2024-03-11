@@ -21,6 +21,7 @@ export default function SearchPage() {
         (game) =>
           game.titulo.toLowerCase().includes(inputValue.toLowerCase()) ||
           game.genero.toLowerCase().includes(inputValue.toLowerCase())
+          
       );
       setFilteredGames(filtered);
     } else {

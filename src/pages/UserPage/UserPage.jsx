@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function UserPage() {
   
+  
   const { user } = useUser();
   const [updatedUser, setUpdatedUser] = useState(null);
   const [formData, setFormData] = useState({
@@ -16,7 +17,11 @@ export default function UserPage() {
     videoGame: 0,
     membresias: [],
   });
+  console.log(user.videoGame);
+  const [filteredGames, setFilteredGames] = useState([]);
   const navigate = useNavigate();
+
+  
 
   const handleOnChange = (event) => {
     const { name, value } = event.target;
@@ -50,7 +55,7 @@ export default function UserPage() {
         <p>Nombre: {updatedUser ? updatedUser.name : user.name}</p>
           <p>Email: {updatedUser ? updatedUser.email : user.email}</p>
           <p>Membresias: {updatedUser ? updatedUser.membresias : user.membresias}</p>
-          <p>Juego favorito: {updatedUser ? updatedUser.videoGame : user.videoGame}</p>
+          <p>ID Juego favorito: {updatedUser ? updatedUser.videoGame : user.videoGame}</p>
         </div>
         <div>
       <button type="submit" className={styles.submitBtn} onClick={changeInfo} >

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getClubs } from "../readDB";
 export default function useClubs(){
+    const[club, setClub]= useState([]);
     const [clubs, setClubs]= useState(null);
 
     useEffect(()=> {

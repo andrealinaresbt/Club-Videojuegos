@@ -26,7 +26,7 @@ export  function Card(props) {
           <button onClick={handleClick} className={styles.button}>
             Más información
           </button>
-          <button className={styles.button}>Unirse</button>
+          <button className={styles.button} onClick={() => alert("No esta la conexion, solo codigo tqm andresito")}>Unirse</button>
         </div>      
     </div>
   )
